@@ -1,50 +1,29 @@
-# Project name
+# Text Tidy
 
-> One sentence describing what this project does and who it helps.
+A small, private text-cleanup tool that runs entirely in your browser. No account, installation, or server is required.
 
-## Overview
+## Features
 
-Explain the problem this project solves, its main features, and any important limitations.
+- Trim line edges and collapse repeated spaces or tabs.
+- Remove blank or duplicate lines and sort lines alphabetically.
+- Convert text to lowercase, uppercase, or title case.
+- Open a local text file, copy the result, or download it as a `.txt` file.
+- See character, word, and line counts for both the input and result.
 
-## Getting started
+Your text stays on your device. The tool does not send it to a server or save it between visits.
 
-### Requirements
+## Use it
 
-- List the tools or services required to use this project.
-
-### Setup
-
-1. Clone this repository.
-2. Install the requirements for your chosen language or toolchain.
-3. Follow the setup instructions in `docs/`.
-
-## Usage
-
-Add a small example showing the most common workflow. Include screenshots or sample data when useful.
-
-## Project structure
-
-```text
-assets/       Images and other static files
-docs/         Guides and design notes
-examples/     Small working examples
-scripts/      Developer and maintenance scripts
-src/          Project source code
-tests/        Automated tests
-```
+Open `index.html` in a modern browser. To publish it with GitHub Pages, open the repository's **Settings → Pages** and choose the `main` branch and `/ (root)` folder as the source.
 
 ## Development
 
-Describe how to run the project locally, format or lint changes, and run tests.
+The app uses plain HTML, CSS, and JavaScript. There are no dependencies or build step. Edit `index.html`, `app.css`, and `app.js`, then reload the page in your browser.
 
 ## Contributing
 
-Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request.
-
-## Security
-
-Please report suspected vulnerabilities privately. See [SECURITY.md](SECURITY.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
 ## License
 
-Choose and add a license before publishing or accepting contributions. Until then, all rights remain with the copyright holder.
+No license has been selected yet. All rights remain with the copyright holder.

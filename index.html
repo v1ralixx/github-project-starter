@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f6f2">
+  <meta name="description" content="Бесплатный инструмент для очистки и форматирования текста. Всё работает локально в браузере.">
+  <title>Текст в порядок — Text Tidy</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Текст в порядок">
+      <span class="brand-mark" aria-hidden="true">tt</span>
+      <span>текст в порядок</span>
+    </a>
+    <span class="privacy-note"><span class="privacy-dot" aria-hidden="true"></span>Обработка только на этом устройстве</span>
+  </header>
+
+  <main class="app-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">НЕБОЛЬШАЯ УТИЛИТА ДЛЯ БОЛЬШИХ ТЕКСТОВ</p>
+      <h1 id="page-title">Текст <span>в порядок.</span></h1>
+      <p class="intro-copy">Пробелы, строки и регистр — настройте результат и заберите его себе.</p>
+    </section>
+
+    <section class="workbench" aria-label="Редактор текста">
+      <div class="text-panel">
+        <div class="panel-heading">
+          <label for="sourceText">Исходный текст</label>
+          <button class="text-button" id="openFileButton" type="button">Открыть файл</button>
+          <input id="fileInput" class="visually-hidden" type="file" accept=".txt,text/plain">
+        </div>
+        <textarea id="sourceText" spellcheck="false" autocapitalize="off" placeholder="Вставьте или напишите текст здесь…"></textarea>
+        <div class="panel-footer"><span id="inputStats">0 символов · 0 слов · 0 строк</span></div>
+      </div>
+
+      <div class="text-panel result-panel">
+        <div class="panel-heading">
+          <label for="resultText">Результат</label>
+          <div class="result-actions">
+            <button class="text-button" id="copyButton" type="button" disabled>Копировать</button>
+            <button class="text-button" id="downloadButton" type="button" disabled>Скачать .txt</button>
+          </div>
+        </div>
+        <textarea id="resultText" spellcheck="false" placeholder="Очищенный текст появится здесь" readonly></textarea>
+        <div class="panel-footer">
+          <span id="outputStats">0 символов · 0 слов · 0 строк</span>
+          <button class="text-button use-result" id="useResultButton" type="button" disabled>В исходный текст</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Настройки обработки">
+      <div class="settings-grid">
+        <label class="setting"><input id="trimLines" type="checkbox" checked><span class="checkmark" aria-hidden="true"></span><span>Убрать пробелы по краям строк</span></label>
+        <label class="setting"><input id="collapseSpaces" type="checkbox" checked><span class="checkmark" aria-hidden="true"></span><span>Сжать повторные пробелы</span></label>
+        <label class="setting"><input id="removeEmpty" type="checkbox"><span class="checkmark" aria-hidden="true"></span><span>Удалить пустые строки</span></label>
+        <label class="setting"><input id="removeDuplicates" type="checkbox"><span class="checkmark" aria-hidden="true"></span><span>Удалить повторяющиеся строки</span></label>
+        <label class="setting"><input id="sortLines" type="checkbox"><span class="checkmark" aria-hidden="true"></span><span>Сортировать строки</span></label>
+        <label class="case-setting" for="caseMode">Регистр
+          <select id="caseMode">
+            <option value="keep">Без изменений</option>
+            <option value="lower">строчные</option>
+            <option value="upper">ЗАГЛАВНЫЕ</option>
+            <option value="title">Каждое Слово</option>
+          </select>
+        </label>
+      </div>
+      <div class="control-footer">
+        <button class="text-button sample-button" id="sampleButton" type="button">Загрузить пример</button>
+        <button class="primary-button" id="processButton" type="button">Привести в порядок <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <p class="status" id="statusMessage" role="status" aria-live="polite"></p>
+  </main>
+
+  <footer class="page-footer"><span>Text Tidy</span><span>Без загрузки текста в интернет</span></footer>
+</body>
+</html>
