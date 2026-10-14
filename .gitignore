@@ -1,0 +1,25 @@
+# Operating systems
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Common generated output
+build/
+dist/
+coverage/
+tmp/
+temp/
+
+# Add language-specific build artifacts when choosing a toolchain.

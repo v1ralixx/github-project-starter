@@ -1,0 +1,25 @@
+name: Repository check
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  structure:
+    name: Check starter structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required files and folders
+        run: |
+          set -euo pipefail
+          test -f README.md
+          test -f CONTRIBUTING.md
+          test -f SECURITY.md
+          test -d src
+          test -d tests
+          test -d docs
+          echo "Repository structure looks good."
